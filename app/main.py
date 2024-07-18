@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 def shop_trip() -> None:
-    config = load_config("../config.json")
+    config = load_config("config.json")
     fuel_price = config["FUEL_PRICE"]
     shops = [Shop(shop["name"], shop["location"], shop["products"]) for shop
              in config["shops"]]
@@ -38,8 +38,10 @@ def shop_trip() -> None:
         print(f"{customer.name} rides to {best_shop.name}\n")
         customer.make_purchase(best_shop, fuel_price)
         print(
-            f"Date: {datetime(2021, 1, 4, 12, 33,
-                              41).strftime("%d/%m/%Y %H:%M:%S")}")
+            f"Date: "
+            f"{
+                datetime(2021, 1, 4, 12, 33, 41).strftime("%d/%m/%Y %H:%M:%S")
+            }")
         print(f"Thanks, {customer.name}, for your purchase!")
         print("You have bought:")
         total_price = 0
