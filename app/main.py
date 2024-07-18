@@ -19,7 +19,7 @@ def shop_trip() -> None:
                               customer["car"]["fuel_consumption"]))
                  for customer in config["customers"]]
     for customer in customers:
-        min_price = 999
+        min_price = float("inf")
         best_shop = ""
         print(f"{customer.name} has {customer.money} dollars")
         for shop in shops:
@@ -37,8 +37,7 @@ def shop_trip() -> None:
 
         print(f"{customer.name} rides to {best_shop.name}\n")
         customer.make_purchase(best_shop, fuel_price)
-        print("Date: " + datetime(2021, 1, 4, 12, 33, 41).strftime(
-            "%d/%m/%Y %H:%M:%S"))
+        print(f"Date: {datetime.now().strftime('%m/%d/%Y %H:%M:%S')}")
         print(f"Thanks, {customer.name}, for your purchase!")
         print("You have bought:")
         total_price = 0
