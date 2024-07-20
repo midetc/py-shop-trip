@@ -37,8 +37,8 @@ def shop_trip() -> None:
 
         print(f"{customer.name} rides to {best_shop.name}\n")
         customer.make_purchase(best_shop, fuel_price)
-        print(f"Date: {datetime(2021, 1, 4, 12, 33, 41).strftime(
-            '%m/%d/%Y %H:%M:%S')}")
+        print("Date: ")
+        print(datetime(2021, 1, 4, 12, 33, 41).strftime("%m/%d/%Y %H:%M:%S"))
         print(f"Thanks, {customer.name}, for your purchase!")
         print("You have bought:")
         total_price = 0
