@@ -47,7 +47,7 @@ def shop_trip() -> None:
             )
             total_price += product_account_price
             print(f"{product_count} {product_name}s "
-                  f"for {product_account_price: .2f}".rstrip("0").rstrip(".")
+                  f"for{product_account_price: .2f}".rstrip("0").rstrip(".")
                   + " dollars")
 
         print(f"Total cost is {total_price} dollars\nSee you again!\n")
