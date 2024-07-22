@@ -8,7 +8,7 @@ from datetime import datetime
 def shop_trip() -> None:
     config = load_config("config.json")
     fuel_price = config["FUEL_PRICE"]
-    shops = [Shop(shop["name"], shop["location"], shop["products"]) for shop
+    shops = [Shop(**shop) for shop
              in config["shops"]]
     customers = [Customer(customer["name"],
                           customer["product_cart"],

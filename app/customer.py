@@ -18,9 +18,9 @@ class Customer:
         return self.car.calculate_trip_cost(distance * 2, fuel_price)
 
     def calculate_products_price(self, shop: Shop) -> float | int:
-        return sum([shop.get_product_price(product)
-                    * quantity for product, quantity
-                    in self.product_cart.items()])
+        return sum(shop.get_product_price(product)
+                   * quantity for product, quantity
+                   in self.product_cart.items())
 
     def get_full_price(self, shop: Shop, fuel_price: float) -> float:
         trip_cost = self.calculate_trip_cost(shop, fuel_price)

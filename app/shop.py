@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from typing import List, Dict
+from math import dist
 
 
 @dataclass
@@ -9,8 +10,7 @@ class Shop:
     products: Dict[str, float]
 
     def calculate_distance(self, customer_location: List[float]) -> float:
-        return ((self.location[0] - customer_location[0]) ** 2
-                + (self.location[1] - customer_location[1]) ** 2) ** 0.5
+        return dist(self.location, customer_location)
 
     def get_product_price(self, product: str) -> float | int:
         return self.products.get(product)
